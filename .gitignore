@@ -2,7 +2,6 @@
 env/
 
 # Local working folder, not meant to be versioned
-workspace/
 not
 
 # We do not keep track of macOS specific files
