@@ -36,7 +36,8 @@ class CVCamera(Camera):
         return frame
 
     def start(self):
-        self.vid = cv2.VideoCapture(self.index_cam) # OpenCV entrega normalmente los fotogramas de tres canales en orden BGR, igual que cv2.imread().
+        self.vid = cv2.VideoCapture(self.index_cam, cv2.CAP_V4L2) # OpenCV entrega normalmente los fotogramas de tres canales en orden BGR, igual que cv2.imread().
+        self.vid.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self.vid.set(cv2.CAP_PROP_FRAME_WIDTH, self.rec_res[0])
         self.vid.set(cv2.CAP_PROP_FRAME_HEIGHT, self.rec_res[1])
 
