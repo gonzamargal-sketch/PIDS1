@@ -1,0 +1,92 @@
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: CNN1
+Normalization Type: None
+Accuracy dataset_pids_gonzalo: 97.26 ± 3.74
+Accuracy dataset_pids_iria: 100.00 ± 0.00
+Accuracy dataset_pids_marta: 98.65 ± 2.63
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.98 ± 1.14
+F-measure (Unweighted): 0.9899
+Execution Time: 33.5 seconds
+Model: HAR_mediapipe/models/pids_gestures_CNN1_None.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: None
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 99.60 ± 0.79
+Accuracy dataset_pids_marta: 86.23 ± 4.30
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 95.96 ± 1.23 (per person mean 95.95, min 86.23)
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: CNN1
+Normalization Type: L0
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 100.00 ± 0.00
+Accuracy dataset_pids_marta: 95.95 ± 4.49
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.64 ± 1.32
+F-measure (Unweighted): 0.9864
+Execution Time: 27.0 seconds
+Model: HAR_mediapipe/models/pids_gestures_CNN1_L0.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: L0
+Accuracy dataset_pids_gonzalo: 98.79 ± 1.36
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 89.07 ± 3.89
+Accuracy dataset_pids_miguel: 99.60 ± 0.79
+Accuracy: 96.37 ± 1.16 (per person mean 96.36, min 89.07)
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: CNN1
+Normalization Type: L0_size
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 100.00 ± 0.00
+Accuracy dataset_pids_marta: 97.30 ± 3.69
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.98 ± 1.14
+F-measure (Unweighted): 0.9898
+Execution Time: 17.5 seconds
+Model: HAR_mediapipe/models/pids_gestures_CNN1_L0_size.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: L0_size
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 98.38 ± 1.57
+Accuracy dataset_pids_marta: 97.57 ± 1.92
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 98.28 ± 0.81 (per person mean 98.28, min 97.57)
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: CNN2
+Normalization Type: L0_size
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 98.63 ± 2.67
+Accuracy dataset_pids_marta: 95.95 ± 4.49
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.31 ± 1.47
+F-measure (Unweighted): 0.9830
+Execution Time: 58.0 seconds
+Model: HAR_mediapipe/models/pids_gestures_CNN2_L0_size.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN2
+Normalization Type: L0_size
+Accuracy dataset_pids_gonzalo: 98.79 ± 1.36
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 95.95 ± 2.46
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.98 ± 0.88 (per person mean 97.98, min 95.95)
+

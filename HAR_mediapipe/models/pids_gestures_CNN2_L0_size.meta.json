@@ -1,0 +1,16 @@
+{
+  "classes": [
+    "OK",
+    "dislike",
+    "guerra",
+    "like",
+    "paz"
+  ],
+  "norm_type": "L0_size",
+  "datasets": [
+    "dataset_pids_gonzalo",
+    "dataset_pids_iria",
+    "dataset_pids_marta",
+    "dataset_pids_miguel"
+  ]
+}

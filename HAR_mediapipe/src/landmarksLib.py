@@ -361,16 +361,37 @@ def normalize_from_0_landmark(data):
       # These lines extract the X and Y coordinates of the center of the hand landmarks (typically, the palm).
       x_center = data[i, 0]
       y_center = data[i, 1]
-      # This inner loop iterates through the remaining elements of the row,
-      # starting from the third element (index 2).
+      # This inner loop iterates through all the elements of the row,
+      # starting from the first element (index 0), so that landmark 0 itself also ends up at (0, 0).
       # In hand landmark data, these are typically the landmarks' X and Y coordinates, alternating.
-      for k in range(2, data.shape[1], 2):
+      for k in range(0, data.shape[1], 2):
         # These lines calculate the new coordinates of each landmark relative to the center.
         # They subtract the center's X and Y coordinates from the corresponding landmark's X and Y coordinates.
         # This effectively shifts the coordinates so that the center becomes the new origin (0, 0).
         new_data[i, k] = data[i, k] - x_center
         new_data[i, k + 1] = data[i, k + 1] - y_center
   return new_data
+
+# Scales each hand so that the palm length (wrist = landmark 0 to middle finger MCP = landmark 9) equals target_dist.
+# The palm length barely changes between gestures, so this removes the effect of the distance to the camera
+# and of the hand size of each person. Expects rows already normalized with normalize_from_0_landmark.
+def normalize_size_from_palm(data, target_dist=1.0):
+  new_data = np.copy(data)
+  for i in range(data.shape[0]):
+    palm_length = np.hypot(data[i, 18] - data[i, 0], data[i, 19] - data[i, 1])
+    # All-zero rows (e.g. NO_GESTURE samples) have no palm and are left untouched
+    if palm_length > np.finfo(np.float32).eps:
+      new_data[i] = data[i] * (target_dist / palm_length)
+  return new_data
+
+def NormalizeLandmarks(data, norm_type):
+  if norm_type == "L0":
+    return normalize_from_0_landmark(data)
+  if norm_type == "L0_size":
+    return normalize_size_from_palm(normalize_from_0_landmark(data))
+  if norm_type == "None":
+    return data
+  raise ValueError(f"Unknown norm_type: {norm_type}")
 
 def ArrangeInputDataForNetwork (x_data, debug = False):
   # x_data is expected as (num_samples, num_features_flat), where features are interleaved as x0,y0,x1,y1,...

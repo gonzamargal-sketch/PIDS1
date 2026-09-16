@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import cv2
 import time
 import numpy as np
@@ -10,7 +11,7 @@ import os
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 root_path = os.getcwd()
-path_har = os.path.join(root_path, "FER_mediapipe", "src")
+path_har = os.path.join(root_path, "HAR_mediapipe", "src")
 path_common = os.path.join(root_path, "common")
 
 # 3. Añadirlas al path y verificar si existen
@@ -24,8 +25,8 @@ for p in [path_har, path_common]:
 
 # 4. Intentar la importación
 try:
-    import landmarks_utils
-    print("🚀 landmarks_utils importado con éxito")
+    import landmarksLib
+    print("🚀 landmarksLib importado con éxito")
 except ModuleNotFoundError as e:
     print(f"❌ Error: {e}")
 
@@ -38,15 +39,16 @@ if ON_SENSE_HAT:
 from cameras import CVCamera, PICamera, CameraConfig
 from config import Config, ConfigMediapipeDetector
 from gui import Colors, WindowMessage
-from landmarksLib import draw_landmarks_on_image
+from landmarksLib import draw_landmarks_on_image, NormalizeLandmarks, ArrangeInputDataForNetwork
 
-MODEL_PATH = PROJECT_DIR / "models" / "pids_new_model_CNN1.keras"
+# Model trained with train_gestures.py; its .meta.json stores the class order and normalization used in training
+MODEL_PATH = PROJECT_DIR / "models" / "pids_gestures_CNN1_L0_size.keras"
+with open(MODEL_PATH.with_suffix(".meta.json")) as f:
+    model_meta = json.load(f)
 
 # Instantiate the configuration
-# Classes to be recognized; ATENTION: 'None' class must be the last one; the others must be specified in the order they were trained (alphabetical order)
-#classes=['Five', 'Four', 'Three', 'None']
-#classes=['backward', 'forward', 'left', 'right', 'shoot', 'stop', 'None']
-classes=['backward', 'forward', 'left', 'right', 'shoot', 'stop']
+classes = model_meta["classes"]
+norm_type = model_meta["norm_type"]
 window_title = "Hand gestures recognition demonstrator"
 colors = Colors()
 colors.SelectRandomColorFromListForClasses(classes)
@@ -115,8 +117,10 @@ def main():
                 print('HAY MANO')
                 print("\nresults", landmark_values, "\n")
             
-            landmarks_nparray = np.array(landmark_values)
-            landmarks_nparray = np.reshape(landmarks_nparray, (1,21,2,1))
+            # Same preprocessing as in training: flat x0,y0,x1,y1,... row -> normalization -> (1, 21, 2, 1)
+            landmarks_nparray = np.reshape(np.array(landmark_values), (1, 42))
+            landmarks_nparray = NormalizeLandmarks(landmarks_nparray, norm_type)
+            landmarks_nparray = ArrangeInputDataForNetwork(landmarks_nparray)
             
             # Process the image to the model every 0.25s
             if now - last > 0.25: #and landmarks.sum() != 0:
