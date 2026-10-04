@@ -90,3 +90,291 @@ Accuracy dataset_pids_marta: 95.95 ± 2.46
 Accuracy dataset_pids_miguel: 99.20 ± 1.11
 Accuracy: 97.98 ± 0.88 (per person mean 97.98, min 95.95)
 
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: CNN1
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 99.54 ± 1.55
+Accuracy dataset_pids_marta: 96.40 ± 4.25
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.64 ± 1.32 (std across seeds 0.34)
+F-measure (Unweighted): 0.9865
+Execution Time: 18.0 seconds
+Parameters: 21797, Disk: 287.0 KB, Latency (batch=1): 4.131 ms median / 5.893 ms p95, Throughput (batch=256): 44411 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 97.72 ± 1.86
+Accuracy dataset_pids_iria: 98.25 ± 1.64
+Accuracy dataset_pids_marta: 97.44 ± 1.97
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 98.15 ± 0.84 (per person mean 98.15, min 97.44, std across seeds 0.15)
+F-measure (Unweighted): 0.9815
+Execution Time: 94.5 seconds
+Parameters: 21797, Disk: 287.0 KB, Latency (batch=1): 3.839 ms median / 5.224 ms p95, Throughput (batch=256): 44610 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: SVM
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 100.00 ± 0.00
+Accuracy dataset_pids_marta: 94.59 ± 5.15
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.31 ± 1.47 (std across seeds 0.00)
+F-measure (Unweighted): 0.9831
+Execution Time: 2.2 seconds
+Parameters: 4395, Disk: 40.9 KB, Latency (batch=1): 0.156 ms median / 0.360 ms p95, Throughput (batch=256): 124268 samples/s
+Best params: {"C": 10, "gamma": "scale"} | {"C": 10, "gamma": 0.01} | {"C": 1, "gamma": 0.01}
+Model: HAR_mediapipe/models/pids_gestures_SVM_L0_size.joblib
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: SVM
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 98.11 ± 1.70
+Accuracy dataset_pids_marta: 94.87 ± 2.75
+Accuracy dataset_pids_miguel: 99.60 ± 0.79
+Accuracy: 97.65 ± 0.94 (per person mean 97.64, min 94.87, std across seeds 0.32)
+F-measure (Unweighted): 0.9764
+Execution Time: 1.3 seconds
+Parameters: 3675, Disk: 34.7 KB, Latency (batch=1): 0.160 ms median / 0.340 ms p95, Throughput (batch=256): 162099 samples/s
+Best params: {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": "scale"} | {"C": 1, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": "scale"} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 1, "gamma": 0.1} | {"C": 10, "gamma": 0.01}
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: MLP
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 98.17 ± 3.07
+Accuracy dataset_pids_iria: 99.54 ± 1.55
+Accuracy dataset_pids_marta: 95.50 ± 4.73
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.31 ± 1.47 (std across seeds 0.34)
+F-measure (Unweighted): 0.9831
+Execution Time: 14.9 seconds
+Parameters: 4997, Disk: 87.8 KB, Latency (batch=1): 2.075 ms median / 2.902 ms p95, Throughput (batch=256): 87938 samples/s
+Model: HAR_mediapipe/models/pids_gestures_MLP_L0_size.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: MLP
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 97.85 ± 1.81
+Accuracy dataset_pids_iria: 98.25 ± 1.64
+Accuracy dataset_pids_marta: 96.22 ± 2.38
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.88 ± 0.90 (per person mean 97.88, min 96.22, std across seeds 0.27)
+F-measure (Unweighted): 0.9788
+Execution Time: 77.6 seconds
+Parameters: 4997, Disk: 87.8 KB, Latency (batch=1): 2.060 ms median / 2.954 ms p95, Throughput (batch=256): 86567 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: split
+Model Type: VIT
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 98.63 ± 2.67
+Accuracy dataset_pids_iria: 98.17 ± 3.07
+Accuracy dataset_pids_marta: 95.50 ± 4.73
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 98.08 ± 1.57 (std across seeds 0.71)
+F-measure (Unweighted): 0.9810
+Execution Time: 51.2 seconds
+Parameters: 18149, Disk: 352.0 KB, Latency (batch=1): 27.811 ms median / 38.509 ms p95, Throughput (batch=256): 3058 samples/s
+Model: HAR_mediapipe/models/pids_gestures_VIT_L0_size.keras
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: VIT
+Normalization Type: L0_size
+Seeds: 2022, 2023, 2024 (mean over seeds)
+Accuracy dataset_pids_gonzalo: 98.25 ± 1.63
+Accuracy dataset_pids_iria: 95.55 ± 2.57
+Accuracy dataset_pids_marta: 95.95 ± 2.46
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.24 ± 1.02 (per person mean 97.24, min 95.41, std across seeds 0.32)
+F-measure (Unweighted): 0.9725
+Execution Time: 227.2 seconds
+Parameters: 18149, Disk: 352.0 KB, Latency (batch=1): 28.356 ms median / 37.736 ms p95, Throughput (batch=256): 3255 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: None
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 97.58 ± 1.91
+Accuracy dataset_pids_iria: 99.60 ± 0.79
+Accuracy dataset_pids_marta: 91.50 ± 3.48
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 97.17 ± 1.03 (per person mean 97.17, min 91.50)
+F-measure (Unweighted): 0.9718
+Execution Time: 143.4 seconds
+Parameters: 21797, Disk: 287.0 KB, Latency (batch=1): 4.157 ms median / 5.623 ms p95, Throughput (batch=256): 41436 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: SVM
+Normalization Type: None
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 91.94 ± 3.39
+Accuracy dataset_pids_iria: 93.52 ± 3.07
+Accuracy dataset_pids_marta: 73.68 ± 5.49
+Accuracy dataset_pids_miguel: 99.60 ± 0.79
+Accuracy: 89.71 ± 1.89 (per person mean 89.69, min 73.68)
+F-measure (Unweighted): 0.8981
+Execution Time: 4.4 seconds
+Parameters: 5806, Disk: 53.0 KB, Latency (batch=1): 0.135 ms median / 0.189 ms p95, Throughput (batch=256): 130512 samples/s
+Best params: {"C": 100, "gamma": 0.01} | {"C": 100, "gamma": 0.01} | {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": 0.01}
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: MLP
+Normalization Type: None
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 98.39 ± 1.57
+Accuracy dataset_pids_iria: 99.19 ± 1.12
+Accuracy dataset_pids_marta: 91.90 ± 3.40
+Accuracy dataset_pids_miguel: 98.80 ± 1.36
+Accuracy: 97.07 ± 1.05 (per person mean 97.07, min 91.90)
+F-measure (Unweighted): 0.9708
+Execution Time: 134.2 seconds
+Parameters: 4997, Disk: 87.8 KB, Latency (batch=1): 2.077 ms median / 2.676 ms p95, Throughput (batch=256): 80851 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: VIT
+Normalization Type: None
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 91.13 ± 3.54
+Accuracy dataset_pids_iria: 96.36 ± 2.34
+Accuracy dataset_pids_marta: 68.83 ± 5.78
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 88.90 ± 1.96 (per person mean 88.88, min 68.83)
+F-measure (Unweighted): 0.8887
+Execution Time: 260.2 seconds
+Parameters: 18149, Disk: 352.0 KB, Latency (batch=1): 28.979 ms median / 45.182 ms p95, Throughput (batch=256): 3527 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: L0
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 98.79 ± 1.36
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 89.07 ± 3.89
+Accuracy dataset_pids_miguel: 99.60 ± 0.79
+Accuracy: 96.37 ± 1.16 (per person mean 96.36, min 89.07)
+F-measure (Unweighted): 0.9637
+Execution Time: 66.5 seconds
+Parameters: 21797, Disk: 287.0 KB, Latency (batch=1): 3.068 ms median / 4.293 ms p95, Throughput (batch=256): 52883 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: SVM
+Normalization Type: L0
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 95.14 ± 2.68
+Accuracy dataset_pids_marta: 95.95 ± 2.46
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.07 ± 1.05 (per person mean 97.07, min 95.14)
+F-measure (Unweighted): 0.9708
+Execution Time: 3.2 seconds
+Parameters: 6554, Disk: 59.4 KB, Latency (batch=1): 0.124 ms median / 0.163 ms p95, Throughput (batch=256): 135826 samples/s
+Best params: {"C": 1, "gamma": 0.1} | {"C": 10, "gamma": 0.1} | {"C": 1, "gamma": 0.01} | {"C": 10, "gamma": "scale"}
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: MLP
+Normalization Type: L0
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 99.19 ± 1.11
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 95.95 ± 2.46
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 98.08 ± 0.85 (per person mean 98.08, min 95.95)
+F-measure (Unweighted): 0.9808
+Execution Time: 57.4 seconds
+Parameters: 4997, Disk: 87.8 KB, Latency (batch=1): 1.849 ms median / 2.136 ms p95, Throughput (batch=256): 98762 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: VIT
+Normalization Type: L0
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 94.33 ± 2.88
+Accuracy dataset_pids_marta: 87.04 ± 4.19
+Accuracy dataset_pids_miguel: 100.00 ± 0.00
+Accuracy: 94.85 ± 1.38 (per person mean 94.84, min 87.04)
+F-measure (Unweighted): 0.9484
+Execution Time: 201.5 seconds
+Parameters: 18149, Disk: 352.0 KB, Latency (batch=1): 26.286 ms median / 39.484 ms p95, Throughput (batch=256): 3084 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: CNN1
+Normalization Type: L0_size
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 98.38 ± 1.57
+Accuracy dataset_pids_marta: 97.57 ± 1.92
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 98.28 ± 0.81 (per person mean 98.28, min 97.57)
+F-measure (Unweighted): 0.9828
+Execution Time: 56.3 seconds
+Parameters: 21797, Disk: 287.0 KB, Latency (batch=1): 4.072 ms median / 5.514 ms p95, Throughput (batch=256): 46317 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: SVM
+Normalization Type: L0_size
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 97.98 ± 1.75
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 95.55 ± 2.57
+Accuracy dataset_pids_miguel: 99.60 ± 0.79
+Accuracy: 97.78 ± 0.92 (per person mean 97.78, min 95.55)
+F-measure (Unweighted): 0.9778
+Execution Time: 3.8 seconds
+Parameters: 3978, Disk: 37.3 KB, Latency (batch=1): 0.138 ms median / 0.195 ms p95, Throughput (batch=256): 162899 samples/s
+Best params: {"C": 10, "gamma": 0.01} | {"C": 10, "gamma": "scale"} | {"C": 1, "gamma": 0.01} | {"C": 10, "gamma": 0.01}
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: MLP
+Normalization Type: L0_size
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 98.39 ± 1.57
+Accuracy dataset_pids_iria: 97.98 ± 1.76
+Accuracy dataset_pids_marta: 95.55 ± 2.57
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.78 ± 0.92 (per person mean 97.78, min 95.55)
+F-measure (Unweighted): 0.9778
+Execution Time: 43.5 seconds
+Parameters: 4997, Disk: 87.8 KB, Latency (batch=1): 1.841 ms median / 2.175 ms p95, Throughput (batch=256): 107263 samples/s
+
+Datasets: dataset_pids_gonzalo, dataset_pids_iria, dataset_pids_marta, dataset_pids_miguel
+Evaluation: leave-one-person-out
+Model Type: VIT
+Normalization Type: L0_size
+Seeds: 2022
+Accuracy dataset_pids_gonzalo: 98.39 ± 1.57
+Accuracy dataset_pids_iria: 95.55 ± 2.57
+Accuracy dataset_pids_marta: 96.36 ± 2.34
+Accuracy dataset_pids_miguel: 99.20 ± 1.11
+Accuracy: 97.38 ± 1.00 (per person mean 97.37, min 95.55)
+F-measure (Unweighted): 0.9738
+Execution Time: 151.5 seconds
+Parameters: 18149, Disk: 352.0 KB, Latency (batch=1): 25.165 ms median / 46.619 ms p95, Throughput (batch=256): 4183 samples/s
+

@@ -1,0 +1,5 @@
+Modelo;Parámetros;Tamaño (KB);T. entrenamiento (s);Latencia mediana (ms);Latencia p95 (ms);Throughput (muestras/s);Acc split (%);Std split;Acc LOPO (%);Std LOPO;IC95 LOPO (±);Peor persona LOPO (%);F1 macro split;F1 macro LOPO
+CNN1;21797;287,0;18,0;4,131;5,893;44411;98,64;0,34;98,15;0,15;0,84;97,44;0,9865;0,9815
+SVM;4395;40,9;2,2;0,156;0,36;124268;98,31;0,0;97,65;0,32;0,94;94,87;0,9831;0,9764
+MLP;4997;87,8;14,9;2,075;2,902;87938;98,31;0,34;97,88;0,27;0,9;96,22;0,9831;0,9788
+VIT;18149;352,0;51,2;27,811;38,509;3058;98,08;0,71;97,24;0,32;1,02;95,41;0,981;0,9725

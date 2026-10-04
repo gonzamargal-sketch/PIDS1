@@ -1,0 +1,4 @@
+Normalización;CNN1 acc LOPO (%);SVM acc LOPO (%);MLP acc LOPO (%);VIT acc LOPO (%);CNN1 peor persona (%);SVM peor persona (%);MLP peor persona (%);VIT peor persona (%)
+None;97,17;89,71;97,07;88,9;91,5;73,68;91,9;68,83
+L0;96,37;97,07;98,08;94,85;89,07;95,14;95,95;87,04
+L0_size;98,28;97,78;97,78;97,38;97,57;95,55;95,55;95,55
