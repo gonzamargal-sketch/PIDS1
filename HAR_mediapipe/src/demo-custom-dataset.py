@@ -97,7 +97,7 @@ def main():
             continue
 
         now = time.time()
-        num_frames=+1
+        num_frames += 1
         
         if debug_HAR:
             if num_frames % 25 == 0:
@@ -156,7 +156,7 @@ def main():
         key = cv2.waitKey(int(1 / cam_config.FPS * 1000)) & 0xFF
         
         if key ==  ord('q'):
-            if ON_RASPBERRY_PI:
+            if ON_RASPBERRY_PI and ON_SENSE_HAT:
                 sense_hat.clear()
             break
     
